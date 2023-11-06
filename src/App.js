@@ -1,9 +1,16 @@
+import Input from "./components/Input";
+import Header from "./components/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      Home
-    </div>
+    <>
+      <Header />
+      <div className="App">
+        Home
+      </div>
+      <Input />
+    </>
   );
 }
 
