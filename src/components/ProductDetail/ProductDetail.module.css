@@ -1,6 +1,44 @@
 .button{
-   padding: 15px 20px;
-   border-radius: 15px;
-   background-color: #18892e;
-   color: antiquewhite  ;
+   border: 1px solid #000000;
+   background-color: #ffffff;
+   text-align: center;
+   font-size: 16px;
+   padding: 6px 60px;
+   font-family: Arial,sans-serif;
+   text-transform: lowercase;
+   line-height: 1.55;
+   font-weight: 600;
+}
+.counter{
+   font-size: 20px;
+   font-family: Arial,sans-serif;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   column-gap: 3px;
+   justify-items: center;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 0 15px;
+   height: 100%;
+   border: 1px solid #000000; 
+   margin-right: 20px;
+   box-sizing: border-box;
+   width: 110px;
+}
+.counter button{
+   background: none;
+   border: none;
+   font-size: 25px;
+}
+
+.button:hover {
+   background-color: #adabab;
+   border-color: #adabab;
+   color: #ffffff;
+}
+.wrapper{
+   display: grid;
+   grid-template-columns: max-content 1fr;
+   max-width: 250px;
+   margin-bottom: 20px;
 }

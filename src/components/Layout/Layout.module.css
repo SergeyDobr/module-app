@@ -1,4 +1,4 @@
-.header {
+/* .header {
    background-color: #1b1919;
    display: flex;
    justify-content: space-between;
@@ -18,11 +18,60 @@
 .header_link{
    display: flex;
    gap: 10px;
-}
-.header_row{
-   justify-content: flex-end;
+} */
+*{
+   margin:0;
+   padding:0;
+ }
+ 
+.headerRow{
    display: flex;
-   flex-grow: 1;
-   padding-right: 3;
+   justify-content: space-between;
+}
+.link{
+   text-decoration: none;
+   color: #4A4E5A;
+   font-size: 14px;
+   padding: 10px 15px;
+   border: 1px solid rgba(74, 79, 89, 0.462);
+   border-radius: 5px;
+}
+.headerCol{
+   display: flex;
    gap: 10px;
+}
+.logoPerson{
+   width: 48px;
+   height: 48px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid rgba(74, 79, 89, 0.462);
+   border-radius: 5px;
+}
+.blockPerson{
+   display: flex;
+   gap: 20px;
+}
+.linkLogin{
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #4A4E5A;
+   font-size: 14px;
+}
+.namePerson{
+   margin: 0;
+   font-weight: 500;
+
+}
+.basketLink{
+   color: #fff;
+   font-size: 14px;
+   background-color: red;
+   display: inline-block;
+   padding: 0 5px;
+   border-radius: 50%;
+   position: absolute;
+   top: 0;
+   right: 0;
 }

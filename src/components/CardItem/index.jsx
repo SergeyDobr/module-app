@@ -1,26 +1,39 @@
-import styles from './CardItem.module.css'
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-
+import styles from "./CardItem.module.css";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalfAlt } from "react-icons/fa";
 function CardItem(props) {
-   // return (
-   //    <Card className={styles.cardContainer}>
-   //       <Card.Img className={styles.cardImage} src={props.src} />
-   //       <Card.Body className={styles.cardTextContainer}>
-   //          <Card.Title className={styles.cardTitle} >{props.name}</Card.Title>
-   //          <Button className={styles.cardButton} >Go somewhere</Button>
-   //       </Card.Body>
-   //    </Card>
-   // );
-   return (
-      <div className={styles.cardContainer}>
-         <img className={styles.cardImage} src={props.src} alt="Category Image" />
-         <div className={styles.cardTextContainer}>
-            <h2 className={styles.cardTitle}>{props.name}</h2>
-            <a href={props.link} className={styles.cardButton}>{props.textBtn}</a>
-         </div>
+  return (
+    <div className={styles.productItem}>
+      <div className={styles.productImg}>
+        <a href={props.link}>
+          <img src={props.src} alt="Category Image" />
+        </a>
       </div>
-   )
+      <div className={styles.productList}>
+        <h3>{props.name}</h3>
+        <div>
+          <div className={styles.stars}>
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStarHalfAlt />
+          </div>
+          <span className={styles.price}>{props.price}</span>
+          <div className={styles.actions}>
+            <div className={styles.addToCart}>
+              <a href={props.link} className={styles.cartButton}>
+                {props.textBtn}
+              </a>
+            </div>
+            <div className={styles.addToLinks}>
+              <a href="" className={styles.wishlist}></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default CardItem;

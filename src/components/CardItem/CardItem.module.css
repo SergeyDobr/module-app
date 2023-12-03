@@ -1,38 +1,83 @@
-.cardContainer {
-   border: 1px solid #ddd;
-   border-radius: 8px;
+.productItem {
+   width: 300px;
+   height: 400px;
+   margin: 0 auto;
+   padding: 10px 10px 5px 10px;
+   border: 1px solid #eee;
+   background: white;
+   font-family: "Open Sans";
    overflow: hidden;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   margin: 20px;
-   max-width: 300px;
+   transition: .4s linear;
+   display: flex;
+   flex-direction: column;
 }
-
-.cardImage {
+.productImg {
+   transition: .3s ease-in-out;
+}
+.productImg:hover {
+   transform: scale(1.1);
+}
+.productImg img {
+   display: block;
    width: 100%;
    height: 200px;
-   object-fit:fill;
+   object-fit:contain;
+}
+.productList {
+   margin-top: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   flex-grow: 1;
+}
+.productList h3 {
+   font-weight: 700;
+   color: #39404B;
+   margin: 0;
+   text-transform: uppercase;
+   font-size: 14px;
+   line-height: 2;
+}
+.price {
+   color: #E34D38;
+   display: block;
+   margin-bottom: 12px;
+}
+.stars {
+   color: gold;
+   height: 14px;
+   line-height: 14px;
+   margin: 7px 0;
+}
+.actions {
+   border-top: 1px solid #eee;
+   padding-top: 4px;
+   font-size: 13px;
+   height: 30px;
+   line-height: 30px;
+}
+.actions:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+.addToCart, .addToLinks {
+   font-size: 16px;
+}
+.cartButton {
+   text-decoration: none;
+   color: #8C877C;
+   padding-right: 20px;
+   border-right: 1px solid #ddd;
+   transition: .4s linear;
+}
+.addToCart:hover .cart-button, .wishlist:hover, .compare:hover {
+   color: #E34D38;
+}
+.wishlist, .compare {
+   font-size: 14px;
+   color: #9b4a8c;
+   padding-left: 20px;
+   transition: .4s linear;
 }
 
-.cardTextContainer {
-   padding: 16px;
-}
-
-.cardTitle {
-   font-size: 25px;
-   font-weight: bold;
-   margin-bottom: 10px;
-}
-.cardButton {
-   background-color: #4caf50;
-   color: #fff;
-   border: none;
-   padding: 10px;
-   border-radius: 4px;
-   transition: background-color 0.3s ease;
-   cursor:pointer;
-   text-decoration:none
-}
-
-.cardButton:hover {
-   background-color: #45a049;
-}

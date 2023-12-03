@@ -1,19 +1,8 @@
 import BasketItem from "./BasketItem";
-import { useDispatch, useSelector } from "react-redux";
-import { GET_ONE_GOOD } from "../../apolloClient/queries";
-import { useQuery } from "@apollo/client";
+import { useSelector } from "react-redux";
 const Basket = () => {
   const orders = useSelector((store) => store.order);
-//   const { data } = useQuery(GET_ONE_GOOD, {
-//     variables: {
-//       query: JSON.stringify(
-//         orders.map((item) => ({
-//           _id: item.id,
-//         }))
-//       ),
-//     },
-//   });
-//   console.log(data);
+  const totalPrice = orders.reduce((sum, item) => sum + item.quantity*item.price, 0);
   return (
     <>
       <table>
@@ -29,14 +18,15 @@ const Basket = () => {
         </thead>
         <tbody>
           {orders.length > 0 &&
-            orders?.map(item => <BasketItem key={item.id} id={item.id} />)}
-          {/* <BasketItem id={'6408bf99d5e3301cba63a5aa'}/> */}
+            orders?.map((item) => (
+              <BasketItem key={item.id} id={item.id} quantity={item.quantity} />
+            ))}
         </tbody>
         <tfoot>
           <tr>
             <th colSpan="3"></th>
             <th>TOTAL</th>
-            <th colSpan="2">$97.50</th>
+            <th colSpan="2">₴ {totalPrice.toFixed(2)}</th>
           </tr>
         </tfoot>
       </table>
