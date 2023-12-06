@@ -47,6 +47,21 @@ export const GET_ONE_GOOD = gql`
             images {
                 url
             }
+            categories{
+               _id
+            }
+        }
+    }
+`;
+
+export const FIND_GOODS = gql`
+    query getGoods($query: String!) {
+      GoodFind(query: $query) {
+            _id
+            name
+            categories{
+               _id
+            }
         }
     }
 `;

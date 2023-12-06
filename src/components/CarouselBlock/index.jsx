@@ -7,7 +7,7 @@ import slide3 from './../../images/slide_3.jpg';
 const slideUrls = [slide1, slide2, slide3];
 const CarouselBlock = () => {
    return (
-      <Carousel >
+      <Carousel style={{marginBottom:'40px'}}>
          {slideUrls.map((url, index) => (
             <Slide key={index} src={url} alt={`Slide ${index + 1}`} />
          ))}

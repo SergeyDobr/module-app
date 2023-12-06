@@ -5,7 +5,11 @@ import { useQuery } from "@apollo/client";
 import { GET_ONE_GOOD } from "../../../apolloClient/queries";
 import Counter from "../../ProductDetail/counter";
 import { TiDeleteOutline } from "react-icons/ti";
-import { updateOrderAC, removeProductFromOrderAC } from "../../../store/orderReducer";
+import { Link } from "react-router-dom";
+import {
+  updateOrderAC,
+  removeProductFromOrderAC,
+} from "../../../store/orderReducer";
 
 const BasketItem = (props) => {
   const dispatch = useDispatch();
@@ -21,26 +25,35 @@ const BasketItem = (props) => {
     dispatch(
       updateOrderAC({
         id: props.id,
-        quantity: newValue, 
+        quantity: newValue,
       })
     );
   };
   const removeProduct = () => {
-    dispatch(removeProductFromOrderAC({
-      id: props.id
-    }));
+    dispatch(
+      removeProductFromOrderAC({
+        id: props.id,
+      })
+    );
   };
   return (
     <tr>
       <td>
-        <img
-          style={{ maxWidth: "100px" }}
-          src={getImageURL(product.images[0].url)}
-          alt="product"
-        />
+        <Link to={`/categories/${product.categories[0]._id}/${product._id}`}>
+          <img
+            style={{ maxWidth: "100px" }}
+            src={getImageURL(product.images[0].url)}
+            alt="product"
+          />
+        </Link>
       </td>
       <td>
-        <a href="#">{product.name}</a>
+        <Link
+          to={`/categories/${product.categories[0]._id}/${product._id}`}
+          style={{ textDecoration: "none", color: "#003", fontSize: "20px" }}
+        >
+          {product.name}
+        </Link>
         <ul>
           <li>
             <span>Product data: data</span>

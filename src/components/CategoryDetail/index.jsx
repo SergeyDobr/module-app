@@ -19,10 +19,10 @@ const CategoryDetail = () => {
   return (
     <Container>
       <Row>
-        <h2>Category Detail:</h2>
+        <h2>{categoryId}</h2>
         {products.length > 0 &&
           products?.map((item, index) => (
-            <Col xl={4} lg={6} sm={12} key={index} style={{gap:"15px",display:"flex"}}>
+            <Col xl={4} lg={6} sm={6} key={index} style={{gap:"15px",display:"flex"}}>
               <CardItem
                 link={`/categories/${categoryId}/${item._id}`}
                 textBtn={
