@@ -5,13 +5,15 @@
  
 .headerRow{
    display: flex;
-   justify-content: space-between;
+   gap: 20px;
+   justify-content: flex-end;
 }
 .link{
    text-decoration: none;
    color: #4A4E5A;
    font-size: 14px;
    padding: 10px 15px;
+   height: 40px;
    border: 1px solid rgba(74, 79, 89, 0.462);
    border-radius: 5px;
 }
@@ -20,8 +22,8 @@
    gap: 10px;
 }
 .logoPerson{
-   width: 48px;
-   height: 48px;
+   width: 40px;
+   height: 40px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -30,7 +32,8 @@
 }
 .blockPerson{
    display: flex;
-   gap: 20px;
+   align-items: flex-end;
+   gap: 15px;
 }
 .linkLogin{
    text-transform: uppercase;
@@ -82,4 +85,13 @@
 .formControl{
    width: 400px;
    position: relative;
+}
+.footer{
+   height: 100px;
+   background-color: #f0f;
+   margin-bottom: 0;
+}
+.navbar{
+   display: flex;
+   align-items:center
 }

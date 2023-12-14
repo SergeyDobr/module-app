@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProductsAC } from "../../../store/productReducer";
-import { useQuery } from "@apollo/client";
-import { GET_ONE_GOOD } from "../../../apolloClient/queries";
 import Counter from "../../ProductDetail/counter";
-import { TiDeleteOutline } from "react-icons/ti";
-import { Link } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
 import {
   updateOrderAC,
   removeProductFromOrderAC,
 } from "../../../store/orderReducer";
+import { useQuery } from "@apollo/client";
+import { GET_ONE_GOOD } from "../../../apolloClient/queries";
+import { Link } from "react-router-dom";
+
+import { TiDeleteOutline } from "react-icons/ti";
 
 const BasketItem = (props) => {
   const dispatch = useDispatch();
-  const { data, loading } = useQuery(GET_ONE_GOOD, {
+  const { data } = useQuery(GET_ONE_GOOD, {
     variables: { query: JSON.stringify([{ _id: props.id }, {}]) },
   });
   const product = data?.GoodFindOne;

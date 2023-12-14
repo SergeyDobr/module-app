@@ -3,3 +3,18 @@
   padding:0;
   box-sizing: border-box;
 }
+html,body, #root{
+  height: 100%;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+}
+main{
+  flex-grow: 1;
+}
+
+.slick-track{
+  display: flex !important;
+  gap: 20px;
+}

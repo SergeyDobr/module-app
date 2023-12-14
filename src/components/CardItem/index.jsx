@@ -22,12 +22,9 @@ function CardItem(props) {
           <span className={styles.price}>{props.price}</span>
           <div className={styles.actions}>
             <div className={styles.addToCart}>
-              <a href={props.link} className={styles.cartButton}>
+              <a href={props.btn} className={styles.cartButton}>
                 {props.textBtn}
               </a>
-            </div>
-            <div className={styles.addToLinks}>
-              <a href="" className={styles.wishlist}></a>
             </div>
           </div>
         </div>

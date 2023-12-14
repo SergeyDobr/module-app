@@ -2,18 +2,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const brands = [
-  "https://download.logo.wine/logo/Apple_Inc./Apple_Inc.-Logo.wine.png",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png",
-  "https://banner2.cleanpng.com/20190417/eoa/kisspng-logo-font-tesla-inc-typography-car-5cb7a2524c8954.3957115715555385143135.jpg",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/2560px-Ford_logo_flat.svg.png",
-  "https://pngimg.com/d/nike_PNG12.png",
-  "https://download.logo.wine/logo/Coca-Cola/Coca-Cola-Logo.wine.png",
-  "https://download.logo.wine/logo/Apple_Inc./Apple_Inc.-Logo.wine.png",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png",
-  "https://banner2.cleanpng.com/20190417/eoa/kisspng-logo-font-tesla-inc-typography-car-5cb7a2524c8954.3957115715555385143135.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/2560px-Ford_logo_flat.svg.png",
-  "https://pngimg.com/d/nike_PNG12.png",
-  "https://download.logo.wine/logo/Coca-Cola/Coca-Cola-Logo.wine.png",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
+  "https://www.webex.com/content/dam/wbx/us/images/rebrand/nav-footer/black.png",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Levis-logo-quer.svg/2560px-Levis-logo-quer.svg.png",
+  "https://logo.com/image-cdn/images/kts928pd/production/92bfed594e672cb48f6e7f534967ac8ba3db28a3-1200x392.png?w=1080&q=72"
 ];
 
 const BrandSlider = () => {
@@ -21,16 +15,16 @@ const BrandSlider = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Количество отображаемых слайдов одновременно
-    slidesToScroll: 1,
-    arrows: true,
+    autoplay: true,
+    slidesToShow: 5,
+    cssEase: "linear",
   };
 
   return (
-    <Slider {...settings}>
+    <Slider className="mb-5" {...settings}>
       {brands.map((logo, index) => (
-        <div key={index} style={{width:'50%'}}>
-          <img className="d-block w-100" src={logo} alt='logo' />
+        <div key={index}>
+          <img className="d-block w-100" src={logo} alt="logo" />
         </div>
       ))}
     </Slider>

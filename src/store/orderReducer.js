@@ -7,7 +7,18 @@ const defaultState = [];
 export const orderReducer = (state = defaultState, action) => {
    switch (action.type) {
       case ADD_PRODUCT_TO_ORDER:
-         return [...state, action.payload]
+         const existingOrderIndex = state.findIndex(item => item.id === action.payload.id);
+         if (existingOrderIndex !== -1) {
+            return state.map(item =>{
+               if(item.id === action.payload.id){
+                  return {...item, quantity:item.quantity+action.payload.quantity}
+               }
+               return item
+            })
+         }
+         else{
+            return [...state, action.payload]
+         }
       case REMOVED_PRODUCT_FROM_ORDER:
          return state.filter(item=>item.id !== action.payload.id)
       case UPDATE_PRODUCT:

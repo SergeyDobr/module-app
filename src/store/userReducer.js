@@ -1,5 +1,6 @@
 export const SET_USER_TOKEN = 'SET_USER-TOKEN'
 export const GET_USER_TOKEN = 'GET_USER-TOKEN'
+export const LOG_OUT_TOKEN = 'LOG_OUT_TOKEN'
 
 const defaultState = {
    token: "",
@@ -11,6 +12,8 @@ export const userReducer = (state = defaultState, action) => {
          return { ...state, token: action.payload.token, userName: action.payload.userName }
       case GET_USER_TOKEN:
          return { ...state, token: action.payload.token, userName: action.payload.userName }
+      case LOG_OUT_TOKEN:
+         return defaultState
       default: return state
    }
 }
@@ -19,7 +22,7 @@ export const setUserAC = (token, userName) => ({
    type: SET_USER_TOKEN,
    payload: {
       token,
-      userName,
+      userName,   
    }
 })
 export const getUserAC = (token, userName) => ({
@@ -28,4 +31,7 @@ export const getUserAC = (token, userName) => ({
       token,
       userName,
    }
+})
+export const logOutUserAC = () => ({
+   type: LOG_OUT_TOKEN,
 })

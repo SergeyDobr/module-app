@@ -5,6 +5,7 @@
    background-color: #f4f4f4;
    padding: 20px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   overflow-y: auto;
 }
 
 .sidebar h2 {
@@ -31,4 +32,7 @@
 
 .sidebar a:hover {
    color: #0971e1;
+}
+.sidebar .navbar{
+   padding: 0;
 }

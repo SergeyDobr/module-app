@@ -33,6 +33,10 @@ export const GET_GOODS = gql`
                images {
                   url
             }
+            categories{
+               _id
+               name
+            }
          }
       }
    }

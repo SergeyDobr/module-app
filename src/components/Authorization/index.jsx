@@ -1,9 +1,10 @@
 import Form from "../Form"
-import { useLazyQuery } from "@apollo/client";
 
+import { useLazyQuery } from "@apollo/client";
 import { GET_TOKEN } from "../../apolloClient/queries";
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux"
+
+import { useDispatch } from "react-redux"
 import { setUserAC } from "../../store/userReducer"
 
 const Authorization = () => {
@@ -22,7 +23,7 @@ const Authorization = () => {
         dispatch(setUserAC(result.data.login, result.variables.login))
         return navigate('/');
       } else {
-        alert("Loh eto sudba")
+        alert("Ошибка, попробуйте еще раз")
       }
     })
   }

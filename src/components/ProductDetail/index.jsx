@@ -1,5 +1,5 @@
 import styles from "./ProductDetail.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "react-bootstrap";
@@ -8,12 +8,15 @@ import { addOrderAC } from "../../store/orderReducer";
 import Counter from "./counter";
 
 const ProductDetail = () => {
+  const navigate = useNavigate();
+  const userToken = useSelector((store) => store.user.token);
   const [counterValue, setCounterValue] = useState(1);
   const { productId } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((store) => store.oneProduct.data);
   useEffect(() => {
     dispatch(getOneProductsAC(productId));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
   const getImageURL = (url) => "http://shop-roles.node.ed.asmer.org.ua/" + url;
   if (!product) {
@@ -48,14 +51,18 @@ const ProductDetail = () => {
               onChange={handleCounterChange}
             />
             <button
-              onClick={() => dispatch(addOrderAC(order))}
+              onClick={() =>
+                userToken
+                  ? dispatch(addOrderAC(order))
+                  : navigate("/authorization")
+              }
               className={styles.button}
             >
               Купить
             </button>
           </div>
           <p style={{ color: "#adabab", fontSize: "18px" }}>
-            ABV 6,5% IBU 50 OG 16,0 °P
+            DETAILS ABOUT THE PRODUCT OR PRODUCT BRAND
           </p>
           <h3>{product.price} грн</h3>
         </Col>
